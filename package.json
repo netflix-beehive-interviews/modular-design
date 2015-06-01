@@ -1,0 +1,15 @@
+{
+  "name": "netflix",
+  "version": "1.0.0",
+  "description": "Netflix beehive interview",
+  "main": "server.js",
+  "author": "Olivia Osby",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "async": "latest",
+    "express": "latest",
+    "request": "latest"
+  }
+}
