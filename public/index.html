@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Site</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="loader">Loading...</div>
+    <main class="main hide">
+        <section class="entry">
+            <div class="user" data-user-id="id">
+                <a href="#user" class="user-name" data-template="name"></a>
+                <span class="user-email" data-template="email"></span>
+                <span class="user-company" data-template="company.name"></span>
+            </div>
+            <div class="post" data-post-id="id">
+                <h1 class="post-title" data-template="title"></h1>
+                <p class="post-body" data-template="body"></p>
+                <a class="post-comments-link" href="#comments">comments</a>
+            </div>
+        </section>
+    </main>
+    <div class="user-overlay">
+        <h2 class="user-name" data-template="name"></h2>
+        <span class="user-email" data-template="email"></span>
+        <span class="user-phone" data-template="phone"></span>
+        <span class="user-website" data-template="website"></span>
+        <span class="user-company" data-template="company.name"></span>
+    </div>
+    <ul class="comments">
+        <li>
+            <h2 class="user-email" data-template="email"></h2>
+            <h3 class="comment-name" data-template="name"></h3>
+            <p class="comment-body" data-template="body"></p>
+        </li>
+    </ul>
+    <script src="js/lib/rsvp.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

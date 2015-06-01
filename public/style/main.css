@@ -1,0 +1,272 @@
+/* TODO:oo use LESS and autoprefixer */
+html, body, h1, h2, h3, h4, h5, h6, ul, li, p, span, a {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: helvetica ,sans-serif;
+    color: #333;
+    font-weight: 100;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+ul, ul li {
+    list-style-type: none;
+}
+
+a:link, a:visited {
+    color: #3BC;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #333;
+    text-decoration: none;
+}
+
+.hide {
+    display: none
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        display: block;
+    }
+    to {
+        opacity: 1;
+        display:block;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+        display: block;
+    }
+    to {
+        opacity: 1;
+        display:block;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    from {
+        max-height: 0;
+        display: block;
+    }
+    to {
+        max-height: 300px;
+        display:block;
+    }
+}
+
+@-moz-keyframes slideIn {
+    from {
+        max-height: 0;
+        display: block;
+    }
+    to {
+        max-height: 300px;
+        display:block;
+    }
+}
+
+.main {
+    margin: 1.5rem;
+    overflow: hidden;
+}
+
+.main .entry:nth-child(2n + 1) {
+    clear: left;
+}
+
+.entry {
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    width: 50%;
+    float: left;
+}
+
+.entry .post {
+    margin: 0 12px;
+}
+
+.entry .post .post-title {
+    font-size: 1.125rem;
+    line-height: 1.55rem;
+}
+.entry .post .post-body {
+    font-size: .875rem;
+    line-height: 1.55rem;
+}
+
+.entry .user {
+    background: #eee;
+    padding: 6px;
+    margin: 0 6px 3px;
+}
+
+.entry .user .user-name,
+.entry .user .user-email,
+.entry .user .user-company {
+    display: inline-block;
+    font-size: .875rem;
+    line-height: 1.125rem;
+}
+
+.entry .user .user-name {
+    display: block;
+    font-weight: 500;
+}
+.entry .user .user-email {
+      padding-right: 0.6rem;
+}
+.entry .user .user-company {}
+
+.user-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    margin: -100px -25%;
+    min-height: 200px;
+    background: rgba(255, 255, 255, .9);
+    padding: 1.125rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid #CCC;
+    z-index: 1;
+    display: none;
+}
+
+.user-overlay.show {
+    display: block;
+    -webkit-animation: fadeIn .25s forwards;
+    -moz-animation: fadeIn .25s forwards;
+    animation: fadeIn .25s forwards;
+}
+
+.user-overlay:after {
+    content: '';
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .6);
+    z-index: -1;
+}
+
+.user-overlay .user-name,
+.user-overlay .user-email,
+.user-overlay .user-company {
+    display: block;
+    font-size: 1.125rem;
+    line-height: 1.55rem;
+}
+
+.comments {
+    display: none;
+    margin-top: 6px;
+    background-color: #EEE;
+    padding: 6px;
+    max-height: 0;
+    overflow: auto;
+}
+
+.comments.show {
+    display: block;
+    -webkit-animation: slideIn .25s forwards;
+    -moz-animation: slideIn .25s forwards;
+    animation: slideIn .25s forwards;
+}
+
+.comments > li {
+    margin-bottom: 18px;
+}
+
+.comments > li:last-child {
+    margin-bottom: 0;
+}
+
+.comments .user-email {
+    display: block;
+    font-size: .875rem;
+    line-height: 1.125rem;
+}
+
+.comments .comment-name {
+    display: block;
+    font-size: 1.125rem;
+    line-height: 1.55rem;
+}
+
+.comments .comment-body {
+    font-size: .875rem;
+    line-height: 1.55rem;
+}
+
+/* http://projects.lukehaas.me/css-loaders/ */
+.loader {
+    margin: -70px auto 6em;
+    top: 50%;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(0,0,0, 0.1);
+    border-right: 1.1em solid rgba(0,0,0, 0.1);
+    border-bottom: 1.1em solid rgba(0,0,0, 0.1);
+    border-left: 1.1em solid rgba(0,0,0, 0.3);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    -moz-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes load8 {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media all and (max-width: 500px) {
+    .entry {
+        float: none;
+        width: 100%;
+    }
+}
